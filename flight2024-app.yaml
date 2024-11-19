@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flight2024
+  namespace: argocd
+spec:
+  destination:
+    namespace: default  # Namespace donde se desplegará tu aplicación
+    server: https://kubernetes.default.svc  # El servidor de Kubernetes
+  source:
+    path: .  # Ubicación de los manifiestos (en la raíz del repositorio en este caso)
+    repoURL: https://github.com/ibitabadger/labkubernetes.git  # URL del repositorio
+    targetRevision: HEAD  # Usamos la rama principal (HEAD)
+  project: flight2024  # El nombre del proyecto previamente definido
+  syncPolicy:
+    automated:
+      prune: true  # Eliminar recursos obsoletos
+      selfHeal: true  # Reparar automáticamente cuando los recursos se desincronicen
