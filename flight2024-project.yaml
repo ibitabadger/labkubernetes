@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: flight2024
-  namespace: argocd  # Aquí va el namespace de Argo CD
+  namespace: default  # Aquí va el namespace de Argo CD
 spec:
   sourceRepos:
     - https://github.com/ibitabadger/labkubernetes.git  # El repositorio que contiene tu código

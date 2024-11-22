@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: flight2024
-  namespace: argocd
+  namespace: default
 spec:
   destination:
     namespace: default  # Namespace donde se desplegará tu aplicación
